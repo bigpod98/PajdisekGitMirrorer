@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gitmirrorer-webui
+  namespace: gitmirrorer
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: gitmirrorer-webui
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: gitmirrorer-api
+  namespace: gitmirrorer
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: gitmirrorer-api

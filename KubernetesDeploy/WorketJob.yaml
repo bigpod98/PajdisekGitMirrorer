@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: gitmirrorer
+
+---
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: db-deploy
+  namespace: gitmirrorer
+spec:
+  template:
+    spec:
+      containers:
+      - name: gitmirrorer-timed
+        image: ghcr.io/bigpod98/pajdisekgitmirrorer/pajdisekgitmirrorer.mirroringscaledworker:alpha10
+        env:
+          - name: RABBITMQ_HOSTNAME
+            value: "rabbitmq.rabbitmq.svc.cluster.local"
+          - name: RABBITMQ_USERNAME
+            value: "gitmirrorer"
+          - name: RABBITMQ_PASSWORD
+            value: "Password"
+          - name: RABBITMQ_QUEUE
+            value: "gitmirrorer"
+          - name: RABBITMQ_EXCHANGE
+            value: "gitmirrorer"
+      restartPolicy: Never
+      imagePullSecrets:
+      - name: regcred
+  backoffLimit: 1

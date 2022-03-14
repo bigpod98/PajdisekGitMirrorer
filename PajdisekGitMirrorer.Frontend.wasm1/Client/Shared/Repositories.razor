@@ -1,0 +1,10 @@
+﻿<div class="item">
+	@foreach (RepoInfo i in Repos.repoInfo)
+	{
+		<Repository Repo=@i></Repository>
+	}
+</div>
+@code {
+	[Parameter]
+	public RepoInfoList Repos { get; set; }
+}

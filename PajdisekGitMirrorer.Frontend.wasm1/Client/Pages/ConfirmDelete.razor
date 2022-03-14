@@ -1,0 +1,17 @@
+﻿@page "/delete/{id}"
+
+<p>Do you realy want to delete mirroring task with ID: @id</p>
+<button @onclick=onYESClick()>YES</button>
+<NavLink class="btn" href="Index">Hell NO!</NavLink>
+
+@code {
+	[Parameter]
+	public static int id { get; set; }
+	
+	static EventCallback onYESClick()
+	{
+		//executedelete
+
+		return new EventCallback();	
+	}
+}

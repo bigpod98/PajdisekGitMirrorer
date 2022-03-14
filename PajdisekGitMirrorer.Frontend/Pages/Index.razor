@@ -1,0 +1,30 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<AddRepository></AddRepository>
+
+<Repositories Repos=repos></Repositories>
+
+<AddRepository></AddRepository>
+
+@code
+{
+	static RepoInfoList repos = new RepoInfoList();
+
+	protected override void OnInitialized()
+	{
+		Task.Run(() => getRepoInfo());
+	}
+
+	void getRepoInfo()
+	{
+		while (true)
+		{
+			var content = StaticVariables.client.GetAsync("/Repositories").Result.Content.ReadAsStringAsync().Result;
+			repos = System.Text.Json.JsonSerializer.Deserialize<RepoInfoList>(content);
+			Thread.Sleep(5000);
+			InvokeAsync(() => StateHasChanged());	
+		}
+	}
+}

@@ -1,0 +1,30 @@
+﻿<EditForm Model="@repo" OnSubmit="@submit">
+        <label>
+            Name: <InputText @bind-Value="repo.Name" />
+        </label>
+        <label>
+            Source Repository:
+            <InputText @bind-Value="repo.SourceRepository" />
+        </label>
+        <label>
+            Target Repository:
+            <InputText @bind-Value="repo.TargetRepository" />
+        </label>
+
+        <button type="submit" class="button">SUBMIT</button>
+</EditForm>
+
+@code {
+    static RepoInfo repo = new RepoInfo();
+
+    static void submit()
+    {
+        repo.ID = 0.ToString();
+        Console.WriteLine(System.Text.Json.JsonSerializer.Serialize(repo));
+        HttpContent content = new StringContent(System.Text.Json.JsonSerializer.Serialize(repo));
+        content.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+
+
+        StaticVariables.client.PostAsync("http://192.168.1.65/Repository", content);
+    }
+}

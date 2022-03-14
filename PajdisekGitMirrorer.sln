@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31717.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PajdisekGitMirrorer.API", "PajdisekGitMirrorer.API\PajdisekGitMirrorer.API.csproj", "{61FFD6B3-33F9-457D-9BDC-DEA0BE3BAF8E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PajdisekGitMirrorer.DBMigrations", "PajdisekGitMirrorer.DBMigrations\PajdisekGitMirrorer.DBMigrations.csproj", "{600C16BA-FB84-4B5B-86A1-9DA731601237}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PajdisekGitMirrorer.Frontend", "PajdisekGitMirrorer.Frontend\PajdisekGitMirrorer.Frontend.csproj", "{ECA87FF2-0ED0-4054-9911-B2AC95745ABF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PajdisekGitMirrorer.MirroringScaledWorker", "PajdisekGitMirrorer.MirroringScaledWorker\PajdisekGitMirrorer.MirroringScaledWorker.csproj", "{31868128-B620-4B75-B5D2-DD2BB31D2BCC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PajdisekGitMirrorer.MirroringTimeWorker", "PajdisekGitMirrorer.MirroringTimeWorker\PajdisekGitMirrorer.MirroringTimeWorker.csproj", "{5F209B5F-7411-403E-85A4-6C830E0E79F1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PajdisekGitMirrorer.SadGitLibrary", "PajdisekGitMirrorer.SadGitLibrary\PajdisekGitMirrorer.SadGitLibrary.csproj", "{4F7601E5-B8D7-4F22-9A7D-3CD4E5C140AA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PajdisekGitMirrorer.CommonLib", "PajdisekGitMirrorer.CommonLib\PajdisekGitMirrorer.CommonLib.csproj", "{323F6E0D-75FD-4B11-A4E2-F4882248753F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PajdisekGitMirrorer.Frontend.wasm1.Server", "PajdisekGitMirrorer.Frontend.wasm1\Server\PajdisekGitMirrorer.Frontend.wasm1.Server.csproj", "{9F9CB593-F16B-4BEE-80F2-EC4C3E025191}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PajdisekGitMirrorer.Frontend.wasm1.Client", "PajdisekGitMirrorer.Frontend.wasm1\Client\PajdisekGitMirrorer.Frontend.wasm1.Client.csproj", "{18EEC8E7-A161-4FCE-B563-655F37CD263C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PajdisekGitMirrorer.Frontend.wasm1.Shared", "PajdisekGitMirrorer.Frontend.wasm1\Shared\PajdisekGitMirrorer.Frontend.wasm1.Shared.csproj", "{B2324F08-FEBA-42BA-9E9B-18A5B002FE5E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61FFD6B3-33F9-457D-9BDC-DEA0BE3BAF8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61FFD6B3-33F9-457D-9BDC-DEA0BE3BAF8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61FFD6B3-33F9-457D-9BDC-DEA0BE3BAF8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61FFD6B3-33F9-457D-9BDC-DEA0BE3BAF8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{600C16BA-FB84-4B5B-86A1-9DA731601237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{600C16BA-FB84-4B5B-86A1-9DA731601237}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{600C16BA-FB84-4B5B-86A1-9DA731601237}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{600C16BA-FB84-4B5B-86A1-9DA731601237}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECA87FF2-0ED0-4054-9911-B2AC95745ABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECA87FF2-0ED0-4054-9911-B2AC95745ABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECA87FF2-0ED0-4054-9911-B2AC95745ABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECA87FF2-0ED0-4054-9911-B2AC95745ABF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31868128-B620-4B75-B5D2-DD2BB31D2BCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31868128-B620-4B75-B5D2-DD2BB31D2BCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31868128-B620-4B75-B5D2-DD2BB31D2BCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31868128-B620-4B75-B5D2-DD2BB31D2BCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F209B5F-7411-403E-85A4-6C830E0E79F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F209B5F-7411-403E-85A4-6C830E0E79F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F209B5F-7411-403E-85A4-6C830E0E79F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F209B5F-7411-403E-85A4-6C830E0E79F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F7601E5-B8D7-4F22-9A7D-3CD4E5C140AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F7601E5-B8D7-4F22-9A7D-3CD4E5C140AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F7601E5-B8D7-4F22-9A7D-3CD4E5C140AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F7601E5-B8D7-4F22-9A7D-3CD4E5C140AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{323F6E0D-75FD-4B11-A4E2-F4882248753F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{323F6E0D-75FD-4B11-A4E2-F4882248753F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{323F6E0D-75FD-4B11-A4E2-F4882248753F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{323F6E0D-75FD-4B11-A4E2-F4882248753F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F9CB593-F16B-4BEE-80F2-EC4C3E025191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F9CB593-F16B-4BEE-80F2-EC4C3E025191}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F9CB593-F16B-4BEE-80F2-EC4C3E025191}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F9CB593-F16B-4BEE-80F2-EC4C3E025191}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18EEC8E7-A161-4FCE-B563-655F37CD263C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18EEC8E7-A161-4FCE-B563-655F37CD263C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18EEC8E7-A161-4FCE-B563-655F37CD263C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18EEC8E7-A161-4FCE-B563-655F37CD263C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2324F08-FEBA-42BA-9E9B-18A5B002FE5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2324F08-FEBA-42BA-9E9B-18A5B002FE5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2324F08-FEBA-42BA-9E9B-18A5B002FE5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2324F08-FEBA-42BA-9E9B-18A5B002FE5E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FFECC535-2977-4C9E-B11F-97C423D495AD}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: db-deploy
+  namespace: gitmirrorer
+spec:
+  template:
+    spec:
+      containers:
+      - name: dbdeploy
+        image: ghcr.io/bigpod98/pajdisekgitmirrorer/pajdisekgitmirrorer.dbmigrations:latest1
+        env:
+        - name: PSQL_HOSTNAME
+          value: "postgres.postgresql-database.svc.cluster.local"
+        - name: PSQL_USERNAME
+          value: "gitmirrorer"
+        - name: PSQL_PASSWORD
+          value: "Password"
+        - name: PSQL_DATABASE
+          value: "gitmirrorer"
+      restartPolicy: Never
+      imagePullSecrets:
+      - name: regcred
+  backoffLimit: 4

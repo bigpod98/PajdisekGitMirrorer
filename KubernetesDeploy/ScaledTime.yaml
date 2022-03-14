@@ -1,0 +1,48 @@
+---
+
+apiVersion: keda.sh/v1alpha1
+kind: ScaledJob
+metadata:
+  name: gitmirrorer-timed-scaledjob
+  namespace: gitmirrorer
+spec:
+  jobTargetRef:
+    parallelism: 1
+    completions: 0
+    activeDeadlineSeconds: 600
+    backoffLimit: 1
+    template:
+      spec:
+        containers:
+        - name: gitmirrorer-timed
+          image: ghcr.io/bigpod98/pajdisekgitmirrorer/pajdisekgitmirrorer.mirroringtimeworker:latest
+          env:
+            - name: PSQL_HOSTNAME
+              value: "postgres.postgresql-database.svc.cluster.local"
+            - name: PSQL_USERNAME
+              value: "gitmirrorer"
+            - name: PSQL_PASSWORD
+              value: "Password"
+            - name: PSQL_DATABASE
+              value: "gitmirrorer"
+            - name: RABBITMQ_HOSTNAME
+              value: "rabbitmq.rabbitmq.svc.cluster.local"
+            - name: RABBITMQ_USERNAME
+              value: "gitmirrorer"
+            - name: RABBITMQ_PASSWORD
+              value: "Password"
+            - name: RABBITMQ_QUEUE
+              value: "gitmirrorer"
+            - name: RABBITMQ_EXCHANGE
+              value: "gitmirrorer"
+  pollingInterval: 30
+  successfulJobsHistoryLimit: 2
+  failedJobsHistoryLimit: 2
+  maxReplicaCount: 1
+  triggers:
+  - type: cron
+    metadata:
+      timezone: Europe/Ljubljana
+      start: 15 * * * *
+      end: 16 * * * *
+      desiredReplicas: "1"

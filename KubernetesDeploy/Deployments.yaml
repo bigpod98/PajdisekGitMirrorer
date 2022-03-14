@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitmirrorer-api
+  namespace: gitmirrorer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gitmirrorer-api
+  template:
+    metadata:
+      labels:
+        app: gitmirrorer-api
+    spec:
+      containers:
+      - name: gitmirrorer-api
+        image: ghcr.io/bigpod98/pajdisekgitmirrorer/pajdisekgitmirrorer.api:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: PSQL_HOSTNAME
+          value: "postgres.postgresql-database.svc.cluster.local"
+        - name: PSQL_USERNAME
+          value: "gitmirrorer"
+        - name: PSQL_PASSWORD
+          value: "Password"
+        - name: PSQL_DATABASE
+          value: "gitmirrorer"
+        - name: RABBITMQ_HOSTNAME
+          value: "rabbitmq.rabbitmq.svc.cluster.local"
+        - name: RABBITMQ_USERNAME
+          value: "gitmirrorer"
+        - name: RABBITMQ_PASSWORD
+          value: "Password"
+        - name: RABBITMQ_QUEUE
+          value: "gitmirrorer"
+        - name: RABBITMQ_EXCHANGE
+          value: "gitmirrorer"
+      
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitmirrorer-webui
+  namespace: gitmirrorer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gitmirrorer-webui
+  template:
+    metadata:
+      labels:
+        app: gitmirrorer-webui
+    spec:
+      containers:
+      - name: gitmirrorer-webui
+        image: ghcr.io/bigpod98/pajdisekgitmirrorer/pajdisekgitmirrorer.frontend:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: RABBITMQ_HOSTNAME
+          value: "rabbitmq.rabbitmq.svc.cluster.local"
+        - name: RABBITMQ_USERNAME
+          value: "gitmirrorer"
+        - name: RABBITMQ_PASSWORD
+          value: "Password"
+        - name: RABBITMQ_QUEUE
+          value: "gitmirrorer"
+        - name: RABBITMQ_EXCHANGE
+          value: "gitmirrorer"

@@ -1,0 +1,11 @@
+﻿.item {
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    border-bottom-width: 1px;
+    width: 700px;
+    padding-bottom: 10px;
+}
+
+.buttons{
+    width:500;
+}
