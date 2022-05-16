@@ -76,7 +76,7 @@
             }
             catch (System.ComponentModel.Win32Exception ex)
             {
-                Console.WriteLine("install git you idiot");
+                Console.WriteLine("install git please");
                 report.NameOfRepo = name;
                 report.Success = false;
                 throw;
