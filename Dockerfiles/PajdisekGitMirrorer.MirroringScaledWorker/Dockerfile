@@ -10,7 +10,7 @@ RUN apt update && apt upgrade -y && apt install curl -y
 RUN curl https://gitlab.pajdisek.palocal/-/snippets/1/raw/main/ca.crt -k -o /ca.crt
 
 FROM ubuntu:latest AS RUNTIME
-RUN apt update && apt upgrade -y && DEBIAN_FRONTEND=noninteractive apt install libicu66 libssl1.1 ca-certificates git -y
+RUN apt update && apt upgrade -y && DEBIAN_FRONTEND=noninteractive apt install libicu70 libssl3 ca-certificates git -y
 COPY --from=CERT /ca.crt /usr/local/share/ca-certificates
 RUN update-ca-certificates
 COPY --from=BUILDER /buildOutput /opt/PajdisekGitMirrorer.MirroringScaledWorker

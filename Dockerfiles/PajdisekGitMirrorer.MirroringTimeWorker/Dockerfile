@@ -6,7 +6,7 @@ RUN dotnet restore
 RUN dotnet publish PajdisekGitMirrorer.MirroringTimeWorker/PajdisekGitMirrorer.MirroringTimeWorker.csproj --configuration Release --output /buildOutput --runtime linux-x64 -p:PublishTrimmed=true
 
 FROM ubuntu:latest AS RUNTIME
-RUN apt update && apt upgrade -y && apt install libicu66 libssl1.1 ca-certificates -y && update-ca-certificates
+RUN apt update && apt upgrade -y && apt install libicu70 libssl3 ca-certificates -y && update-ca-certificates
 COPY --from=BUILDER /buildOutput /opt/PajdisekGitMirrorer.MirroringTimeWorker
 EXPOSE 80
 ENV ASPNETCORE_URLS=http://+:80
